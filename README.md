@@ -5,7 +5,7 @@ UI component library for Uni-App(Vue) platform.
 
 ### 1.安装(Install)
 ```shell
-npm install wu-ui
+npm install wu-ui-uni
 ```
 
 ### 2.配置src/pages.json(Configuration)
@@ -14,7 +14,7 @@ npm install wu-ui
     "easycom": {
         "autoscan": true,
         "custom": {
-            "^wu-(.*)": "wu-ui/src/components/wu-$1/wu-$1.vue"
+            "^wu-(.*)": "wu-ui-uni/src/components/wu-$1/wu-$1.vue"
         }
     }
 }
