@@ -1,0 +1,48 @@
+{
+    "easycom": {
+        "autoscan": true,
+        "custom": {
+            // wu-ui 配置
+            "^wu-(.*)": "@/components/wu-$1/wu-$1.vue"
+        }
+    },
+    "globalStyle": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "wu-ui",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "pages": [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path": "pages/index"
+        },
+        {
+            "path": "pages/demo/button"
+        },
+        {
+            "path": "pages/demo/cell"
+        },
+        {
+            "path": "pages/demo/checker"
+        },
+        {
+            "path": "pages/demo/icon"
+        },
+        {
+            "path": "pages/demo/input"
+        },
+        {
+            "path": "pages/demo/input-number"
+        },
+        {
+            "path": "pages/demo/popup"
+        },
+        {
+            "path": "pages/demo/scroll-view"
+        },
+        {
+            "path": "pages/demo/swipe"
+        }
+    ]
+}

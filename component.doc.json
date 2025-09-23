@@ -1,0 +1,10 @@
+{
+    "docType": "html",
+    "docName": "WuUi文档",
+    "docDescription": "用于uni-app的一些UI组件，需要vue3.",
+    "outDir": "docs",
+    "customContent": {
+        "html": "docs/install.html",
+        "md": "docs/install.md"
+    }
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wu-popup - WuUi文档</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #3498db; margin-top: 30px; }
+        h3 { color: #2c3e50; margin-top: 20px; }
+        .description { font-size: 1.1em; line-height: 1.6; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #3498db; }
+        .example-container { margin: 20px 0; }
+        .example-title { font-weight: bold; margin-bottom: 10px; }
+        .code-block { font-family: monospace; background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        td, th { padding: 12px 8px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .back-link { margin-bottom: 20px; display: inline-block; }
+        code { background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; }
+        .param-item { margin-bottom: 4px; }
+        .param-item:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="back-link"><a href="index.html">← 返回组件列表</a></div>
+    <h1>wu-popup</h1><div class="description">半屏弹出框，从页面底部弹出</div><h2>组件示例</h2>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;script setup&gt;
+    import {ref} from &#039;vue&#039;;
+    const state = ref(false)
+&lt;/script\&gt;
+&lt;template&gt;
+  &lt;div&gt;
+      &lt;wu-button @click=&quot;state = true&quot;&gt;显示&lt;/wu-button&gt;
+      &lt;wu-popup v-model=&quot;state&quot;&gt;
+          弹出框内容
+      &lt;/wu-popup&gt;
+  &lt;/div&gt;
+&lt;/template&gt;</code></pre>
+            </div>
+        <h2>Props</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td><code>string</code></td>
+                <td><code>''</code></td>
+                <td>弹窗标题</td>
+            </tr>
+            <tr>
+                <td>minHeight</td>
+                <td><code>string</code></td>
+                <td><code>'500rpx'</code></td>
+                <td>最小高度</td>
+            </tr>
+            <tr>
+                <td>maxHeight</td>
+                <td><code>string</code></td>
+                <td><code>'calc(100vh - 30rpx)'</code></td>
+                <td>最大高度</td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td><code>string</code></td>
+                <td><code>'40vh'</code></td>
+                <td>高度</td>
+            </tr>
+            <tr>
+                <td>moreNav</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>showMask</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>显示背景</td>
+            </tr>
+            <tr>
+                <td>maskColor</td>
+                <td><code>string</code></td>
+                <td><code>'rgba(0, 0, 0, 0.5)'</code></td>
+                <td>背景颜色</td>
+            </tr>
+            <tr>
+                <td>maskClosable</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>允许点击背景关闭</td>
+            </tr>
+            <tr>
+                <td>swipeDownClosable</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>允许下滑关闭</td>
+            </tr>
+            <tr>
+                <td>duration</td>
+                <td><code>number</code></td>
+                <td><code>250</code></td>
+                <td>动画时间,单位ms</td>
+            </tr>
+            <tr>
+                <td>showCancel</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>显示取消按钮</td>
+            </tr>
+            <tr>
+                <td>cancelText</td>
+                <td><code>string</code></td>
+                <td><code>'取消'</code></td>
+                <td>取消按钮文字</td>
+            </tr>
+            <tr>
+                <td>cancelDisabled</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>取消按钮disabled状态</td>
+            </tr>
+            <tr>
+                <td>cancelLoading</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>取消按钮loading状态</td>
+            </tr>
+            <tr>
+                <td>cancelClosable</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>允许点击取消按钮关闭</td>
+            </tr>
+            <tr>
+                <td>showConfirm</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>显示确认按钮</td>
+            </tr>
+            <tr>
+                <td>confirmText</td>
+                <td><code>string</code></td>
+                <td><code>'完成'</code></td>
+                <td>确认按钮文字</td>
+            </tr>
+            <tr>
+                <td>confirmDisabled</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>确认按钮disabled状态</td>
+            </tr>
+            <tr>
+                <td>confirmLoading</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>确认按钮loading状态</td>
+            </tr>
+            <tr>
+                <td>confirmClosable</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>允许点击确认按钮关闭</td>
+            </tr>
+            <tr>
+                <td>popupBackground</td>
+                <td><code>string</code></td>
+                <td><code>'#ffffff'</code></td>
+                <td>弹窗内容的背景色</td>
+            </tr></table>
+        <h2>Expose (暴露的方法和属性)</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>cancel</td>
+                <td><code>-</code></td>
+                <td>取消</td>
+            </tr>
+            <tr>
+                <td>confirm</td>
+                <td><code>-</code></td>
+                <td>确认</td>
+            </tr>
+            <tr>
+                <td>getScrollView</td>
+                <td><code>-</code></td>
+                <td>获取内容的wu-scroll-view实例</td>
+            </tr></table>
+        <h2>Events</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>参数</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>cancel</td>
+                <td>-</td>
+                <td>点击取消时触发</td>
+            </tr>
+            <tr>
+                <td>confirm</td>
+                <td>-</td>
+                <td>点击确认时触发</td>
+            </tr></table>
+        <h2>Slots</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>default</td>
+                <td>内容部分</td>
+            </tr>
+            <tr>
+                <td>more-nav</td>
+                <td>还有更多内容的状态指示器</td>
+            </tr></table>
+</body>
+</html>

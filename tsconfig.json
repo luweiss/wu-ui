@@ -1,0 +1,34 @@
+{
+    "extends": "@vue/tsconfig/tsconfig.json",
+    "compilerOptions": {
+        "sourceMap": true,
+        "lib": [
+            "esnext",
+            "dom"
+        ],
+        "types": [
+            "vue",
+            "@vue/runtime-core",
+            "@dcloudio/types"
+        ],
+
+        "typeRoots": ["./node_modules/@types", "./dist/types"],
+
+        // vue-tsc
+        "emitDeclarationOnly": true,
+        "declaration": true,
+        "declarationDir": "dist/types",
+        "allowJs": true
+    },
+    "include": [
+        "src/**/*.ts",
+//        "src/**/*.d.ts",
+//        "src/**/*.tsx",
+        "src/**/*.vue",
+    ],
+    "exclude": [
+        "src/pages",
+        "src/App.vue",
+        "src/main.ts"
+    ]
+}

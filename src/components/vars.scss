@@ -1,0 +1,49 @@
+$wu-padding: 30rpx;
+$wu-margin: 30rpx;
+
+$wu-border-radius: 20rpx;
+$wu-border-radius-sm: 15rpx;
+$wu-border-radius-lg: 30rpx;
+$wu-cell-height: 100rpx;
+
+$wu-text-color-light: #999;
+$wu-text-color-base: #222;
+$wu-text-color-dark: #000;
+$wu-border-color: #ddd;
+
+$wu-background-dark: rgba(0, 0, 0, 0.75);
+$wu-background-light: #EDEDED;
+
+$wu-font-size-sm: 24rpx;
+$wu-font-size-base: 30rpx;
+$wu-font-size-lg: 36rpx;
+
+$wu-button-size-sm: 60rpx;
+$wu-button-size-base: 80rpx;
+$wu-button-size-lg: 100rpx;
+
+$wu-color-primary: #07c160;
+$wu-color-success: #07c160;
+$wu-color-warning: #c87d2f;
+$wu-color-danger: #fa5151;
+$wu-color-info: #999;
+
+$wu-safe-padding-bottom: constant(safe-area-inset-bottom);
+$wu-safe-padding-bottom: env(safe-area-inset-bottom);
+
+$wu-popup-index: 999;
+/* #ifdef H5 */
+* {
+    box-sizing: border-box;
+}
+
+/* #endif */
+
+div,
+view,
+input,
+button,
+scroll-view,
+text {
+    box-sizing: border-box;
+}

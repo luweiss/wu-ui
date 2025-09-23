@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wu-icon - WuUi文档</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #3498db; margin-top: 30px; }
+        h3 { color: #2c3e50; margin-top: 20px; }
+        .description { font-size: 1.1em; line-height: 1.6; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #3498db; }
+        .example-container { margin: 20px 0; }
+        .example-title { font-weight: bold; margin-bottom: 10px; }
+        .code-block { font-family: monospace; background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        td, th { padding: 12px 8px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .back-link { margin-bottom: 20px; display: inline-block; }
+        code { background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; }
+        .param-item { margin-bottom: 4px; }
+        .param-item:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="back-link"><a href="index.html">← 返回组件列表</a></div>
+    <h1>wu-icon</h1><div class="description">使用iconfont图标</div><h2>组件示例</h2>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;wu-icon icon=&quot;love-filling&quot;/&gt;</code></pre>
+            </div>
+        <h2>Props</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>icon</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>图标, 可选值见文档或演示项目</td>
+            </tr>
+            <tr>
+                <td>weight</td>
+                <td><code>"normal" | "bold" | "bolder" | "light" | "inherit" | string | number</code></td>
+                <td><code>'normal'</code></td>
+                <td>对应 css font-weight 属性</td>
+            </tr>
+            <tr>
+                <td>loading</td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>是否进入加载状态(动画旋转图标)</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>对应 css font-size 属性</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td><code>"default" | "primary" | "info" | "warning" | "danger" | "light"</code></td>
+                <td>-</td>
+                <td>图标颜色类型，默认是文字默认颜色</td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>图标颜色，将覆盖掉type属性</td>
+            </tr>
+            <tr>
+                <td>customStyle</td>
+                <td><code>any</code></td>
+                <td>-</td>
+                <td>自定义样式</td>
+            </tr></table>
+</body>
+</html>

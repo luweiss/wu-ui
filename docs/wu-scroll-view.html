@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wu-scroll-view - WuUi文档</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #3498db; margin-top: 30px; }
+        h3 { color: #2c3e50; margin-top: 20px; }
+        .description { font-size: 1.1em; line-height: 1.6; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #3498db; }
+        .example-container { margin: 20px 0; }
+        .example-title { font-weight: bold; margin-bottom: 10px; }
+        .code-block { font-family: monospace; background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        td, th { padding: 12px 8px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .back-link { margin-bottom: 20px; display: inline-block; }
+        code { background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; }
+        .param-item { margin-bottom: 4px; }
+        .param-item:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="back-link"><a href="index.html">← 返回组件列表</a></div>
+    <h1>wu-scroll-view</h1><div class="description">滚动内容</div><h2>组件示例</h2>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;wu-scroll-view&gt;
+      主要内容
+  &lt;/wu-scroll-view&gt;</code></pre>
+            </div>
+        <h2>Props</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>scrollY</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>允许Y轴滚动</td>
+            </tr>
+            <tr>
+                <td>scrollX</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>允许X轴滚动</td>
+            </tr>
+            <tr>
+                <td>scrollTop</td>
+                <td><code>number</code></td>
+                <td><code>0</code></td>
+                <td>滚动位置距离顶部</td>
+            </tr>
+            <tr>
+                <td>scrollWithAnimation</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>滚动时使用动画</td>
+            </tr>
+            <tr>
+                <td>animationDuration</td>
+                <td><code>number</code></td>
+                <td><code>250</code></td>
+                <td>滚动动画时间</td>
+            </tr>
+            <tr>
+                <td>customStyle</td>
+                <td><code>Record | any</code></td>
+                <td>-</td>
+                <td>自定义样式</td>
+            </tr>
+            <tr>
+                <td>contentStyle</td>
+                <td><code>Record | any</code></td>
+                <td>-</td>
+                <td>内容部分自定义样式</td>
+            </tr>
+            <tr>
+                <td>hideScrollBar</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>隐藏滚动条</td>
+            </tr></table>
+        <h2>Expose (暴露的方法和属性)</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>scrollTo</td>
+                <td><code>-</code></td>
+                <td>滚动到指定位置,scrollTo(100)</td>
+            </tr>
+            <tr>
+                <td>updateScrollHeight</td>
+                <td><code>-</code></td>
+                <td>更新滚动组件高度,updateScrollHeight().then(height=>{});</td>
+            </tr>
+            <tr>
+                <td>getScrollHeight</td>
+                <td><code>-</code></td>
+                <td>获取滚动高度,getScrollHeight().then(height=>{});</td>
+            </tr>
+            <tr>
+                <td>scrollTop</td>
+                <td><code>-</code></td>
+                <td>当前滚动位置</td>
+            </tr></table>
+        <h2>Events</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>参数</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>scroll</td>
+                <td>event: <code>Event</code> - 触发事件</td>
+                <td>滚动时触发</td>
+            </tr>
+            <tr>
+                <td>scrolltoupper</td>
+                <td>event: <code>Event</code> - 触发事件</td>
+                <td>滚动到顶部时触发</td>
+            </tr>
+            <tr>
+                <td>scrolltolower</td>
+                <td>event: <code>Event</code> - 触发事件</td>
+                <td>滚动到底部时触发</td>
+            </tr></table>
+        <h2>Slots</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>default</td>
+                <td>-</td>
+            </tr></table>
+</body>
+</html>
