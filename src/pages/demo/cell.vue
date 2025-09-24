@@ -2,6 +2,12 @@
 import {ref} from "vue";
 
 const data = ref(['张三', '李四', '王五']);
+
+const onInfoClick = (n) => {
+    uni.showToast({
+        title: n
+    });
+};
 </script>
 
 <template>
@@ -57,19 +63,17 @@ const data = ref(['张三', '李四', '王五']);
 
             <wu-cell-group title="左滑操作">
                 <!-- 注意不要使用index作为key，不然删除某一行后，样式状态会转移给下一行 -->
-                <TransitionGroup name="cell-item">
-                    <wu-cell v-for="(n, i) in data" :key="n"
-                            swipe-enabled
-                            label="姓名">
-                        <template #hidden-content>
-                            <div class="options">
-                                <div class="item danger" @click="data.splice(i, 1)">删除</div>
-                                <div class="item primary" @click="uni.showToast({title: n, icon: 'none'})">信息</div>
-                            </div>
-                        </template>
-                        {{ n }}
-                    </wu-cell>
-                </TransitionGroup>
+                <wu-cell v-for="(n, i) in data" :key="n"
+                         swipe-enabled
+                         label="姓名">
+                    <template #hidden-content>
+                        <div class="options">
+                            <div class="item danger" @click="data.splice(i, 1)">删除</div>
+                            <div class="item primary" @click="onInfoClick(n)">信息</div>
+                        </div>
+                    </template>
+                    {{ n }}
+                </wu-cell>
                 <template #footer>
                     <wu-button @click="data.push('user-'+ (data.length+1))" text type="primary">添加</wu-button>
                 </template>
@@ -113,19 +117,4 @@ const data = ref(['张三', '李四', '王五']);
     }
 }
 
-.cell-item-enter-active,
-.cell-item-leave-active {
-    transition-property: transform, opacity;
-    transition-duration: 500ms;
-}
-
-.cell-item-enter-from {
-    opacity: 0;
-    transform: translateX(-50rpx);
-}
-
-.cell-item-leave-to {
-    opacity: 0;
-    transform: translateX(50rpx);
-}
 </style>
