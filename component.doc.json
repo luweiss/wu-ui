@@ -1,5 +1,4 @@
 {
-    "docType": "md",
     "docName": "WuUi文档",
     "docDescription": "用于uni-app的一些UI组件，需要vue3.",
     "outDir": "docs"

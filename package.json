@@ -24,7 +24,9 @@
         "README.md"
     ],
     "scripts": {
-        "build:component-doc": "component-doc",
+        "build:publish": "rimraf dist/types && vue-tsc && component-doc --docType md && component-doc --docType html && script/build-uni-module.js",
+        "build:uni-module": "script/build-uni-module.js",
+        "build:component-doc": "component-doc --docType md && component-doc --docType html",
         "build:types": "rimraf dist/types && vue-tsc",
         "dev:custom": "uni -p",
         "dev:h5": "uni",
@@ -89,7 +91,7 @@
         "sass": "~1.78.0",
         "typescript": "^4.9.4",
         "vite": "5.2.8",
-        "vue-component-docgen": "^1.0.2",
+        "vue-component-docgen": "^1.0.3",
         "vue-tsc": "^1.8.27"
     },
     "peerDependencies": {

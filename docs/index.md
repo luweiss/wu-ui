@@ -37,6 +37,3 @@
 - [wu-swipe](wu-swipe.md)
   可以左滑显示隐藏内容的组件
 
-- [wu-test](wu-test.md)
-  This is an example of creating a reusable grid component and using it with external data.
-
