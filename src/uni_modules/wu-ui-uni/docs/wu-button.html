@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wu-button - WuUi文档</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #3498db; margin-top: 30px; }
+        h3 { color: #2c3e50; margin-top: 20px; }
+        .description { font-size: 1.1em; line-height: 1.6; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #3498db; }
+        .example-container { margin: 20px 0; }
+        .example-title { font-weight: bold; margin-bottom: 10px; }
+        .code-block { font-family: monospace; background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        td, th { padding: 12px 8px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .back-link { margin-bottom: 20px; display: inline-block; }
+        code { background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; }
+        .param-item { margin-bottom: 4px; }
+        .param-item:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="back-link"><a href="index.html">← 返回组件列表</a></div>
+    <h1>wu-button</h1><div class="description">按钮</div><h2>组件示例</h2>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;!-- 基础按钮 --&gt;
+&lt;wu-button type=&quot;default&quot;&gt;default&lt;/wu-button&gt;
+&lt;wu-button type=&quot;info&quot;&gt;info&lt;/wu-button&gt;
+&lt;wu-button type=&quot;primary&quot;&gt;primary&lt;/wu-button&gt;
+&lt;wu-button type=&quot;warning&quot;&gt;warning&lt;/wu-button&gt;
+&lt;wu-button type=&quot;danger&quot;&gt;danger&lt;/wu-button&gt;</code></pre>
+            </div>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;!-- 尺寸: size --&gt;
+&lt;wu-button type=&quot;primary&quot; size=&quot;sm&quot;&gt;小尺寸&lt;/wu-button&gt;
+&lt;wu-button type=&quot;primary&quot; size=&quot;base&quot;&gt;默认尺寸&lt;/wu-button&gt;
+&lt;wu-button type=&quot;primary&quot; size=&quot;lg&quot;&gt;大尺寸&lt;/wu-button&gt;</code></pre>
+            </div>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;!-- 状态: loading, disabled,  --&gt;
+&lt;wu-button type=&quot;primary&quot; loading&gt;加载状态&lt;/wu-button&gt;
+&lt;wu-button type=&quot;primary&quot; disabled&gt;禁用状态&lt;/wu-button&gt;</code></pre>
+            </div>
+        <h2>Props</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>纯文本按钮，无边框背景</td>
+            </tr>
+            <tr>
+                <td>block</td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>块级按钮，宽度为 100%</td>
+            </tr>
+            <tr>
+                <td>radius</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>是否使用圆角，默认是</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td><code>"default" | "primary" | "info" | "warning" | "danger"</code></td>
+                <td><code>"default"</code></td>
+                <td>按钮颜色类型，默认是白色按钮</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td><code>"sm" | "base" | "lg"</code></td>
+                <td><code>"base"</code></td>
+                <td>按钮大小</td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>按钮高度</td>
+            </tr>
+            <tr>
+                <td>weight</td>
+                <td><code>"normal" | "lighter" | "bold"</code></td>
+                <td><code>"normal"</code></td>
+                <td>文本粗细</td>
+            </tr>
+            <tr>
+                <td>weak</td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>是否弱化按钮，默认否</td>
+            </tr>
+            <tr>
+                <td>disabled</td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>是否禁用按钮，默认否</td>
+            </tr>
+            <tr>
+                <td>loading</td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>是否显示加载中状态，默认否</td>
+            </tr>
+            <tr>
+                <td>infinity</td>
+                <td><code>boolean</code></td>
+                <td><code>false</code></td>
+                <td>按钮设置为充满父元素宽高，默认否</td>
+            </tr>
+            <tr>
+                <td>formType</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>openType</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>appParameter</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>lang</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>sessionFrom</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>sendMessageTitle</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>sendMessagePath</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>sendMessageImg</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>showMessageCard</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>groupId</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>guildId</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>publicId</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>dataImId</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>dataImType</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>dataGoodsId</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>dataOrderId</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>dataBizLine</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>-</td>
+            </tr></table>
+        <h2>Events</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>参数</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>click</td>
+                <td>-</td>
+                <td>点击按钮</td>
+            </tr>
+            <tr>
+                <td>getphonenumber</td>
+                <td>-</td>
+                <td>平台开放接口: 获取手机号</td>
+            </tr>
+            <tr>
+                <td>getuserinfo</td>
+                <td>-</td>
+                <td>平台开放接口: 获取用户信息</td>
+            </tr>
+            <tr>
+                <td>error</td>
+                <td>-</td>
+                <td>平台开放接口: 开放接口出错时</td>
+            </tr>
+            <tr>
+                <td>opensetting</td>
+                <td>-</td>
+                <td>平台开放接口: 打开设置</td>
+            </tr>
+            <tr>
+                <td>launchapp</td>
+                <td>-</td>
+                <td>平台开放接口: 启动小程序</td>
+            </tr>
+            <tr>
+                <td>contact</td>
+                <td>-</td>
+                <td>平台开放接口: 打开客服界面</td>
+            </tr>
+            <tr>
+                <td>chooseavatar</td>
+                <td>-</td>
+                <td>平台开放接口: 选择用户头像</td>
+            </tr>
+            <tr>
+                <td>agreeprivacyauthorization</td>
+                <td>-</td>
+                <td>平台开放接口: 同意隐私授权</td>
+            </tr>
+            <tr>
+                <td>addgroupapp</td>
+                <td>-</td>
+                <td>平台开放接口: 添加小程序到群</td>
+            </tr>
+            <tr>
+                <td>chooseaddress</td>
+                <td>-</td>
+                <td>平台开放接口: 选择地址</td>
+            </tr>
+            <tr>
+                <td>chooseinvoicetitle</td>
+                <td>-</td>
+                <td>平台开放接口: 选择发票抬头</td>
+            </tr>
+            <tr>
+                <td>subscribe</td>
+                <td>-</td>
+                <td>平台开放接口: 订阅消息</td>
+            </tr>
+            <tr>
+                <td>login</td>
+                <td>-</td>
+                <td>平台开放接口: 登录</td>
+            </tr>
+            <tr>
+                <td>im</td>
+                <td>-</td>
+                <td>平台开放接口: 聊天</td>
+            </tr></table>
+        <h2>Slots</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>default</td>
+                <td>-</td>
+            </tr></table>
+</body>
+</html>

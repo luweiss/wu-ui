@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wu-input - WuUi文档</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #3498db; margin-top: 30px; }
+        h3 { color: #2c3e50; margin-top: 20px; }
+        .description { font-size: 1.1em; line-height: 1.6; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #3498db; }
+        .example-container { margin: 20px 0; }
+        .example-title { font-weight: bold; margin-bottom: 10px; }
+        .code-block { font-family: monospace; background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        td, th { padding: 12px 8px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .back-link { margin-bottom: 20px; display: inline-block; }
+        code { background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; }
+        .param-item { margin-bottom: 4px; }
+        .param-item:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="back-link"><a href="index.html">← 返回组件列表</a></div>
+    <h1>wu-input</h1><div class="description">输入框</div><h2>组件示例</h2>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;script setup&gt;
+    import {ref} from &#039;vue&#039;;
+    const msg = ref(&quot;hello&quot;)
+&lt;/script\&gt;
+&lt;template&gt;
+  &lt;wu-input v-model=&quot;msg&quot;/&gt;
+&lt;/template&gt;</code></pre>
+            </div>
+        <h2>Props</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>withBorder</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>使用带边框的输入框(默认是透明的)</td>
+            </tr>
+            <tr>
+                <td>disabled</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>禁用状态</td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>是否是密码输入框</td>
+            </tr>
+            <tr>
+                <td>maxlength</td>
+                <td><code>number</code></td>
+                <td><code>-1</code></td>
+                <td>最大长度</td>
+            </tr>
+            <tr>
+                <td>placeholder</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>提示内容</td>
+            </tr>
+            <tr>
+                <td>focus</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>是否获取焦点</td>
+            </tr>
+            <tr>
+                <td>clearable</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>可一键清除</td>
+            </tr>
+            <tr>
+                <td>align</td>
+                <td><code>"left" | "center" | "right"</code></td>
+                <td><code>"left"</code></td>
+                <td>文本对齐方式</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td><code>"text" | "number" | "idcard" | "digit" | "tel" | "safe-password" | "nickname" | string</code></td>
+                <td>-</td>
+                <td>输入类型</td>
+            </tr>
+            <tr>
+                <td>confirmType</td>
+                <td><code>"send" | "search" | "next" | "go" | "done" | string</code></td>
+                <td>-</td>
+                <td>弹出软键盘的右下角按钮的文字。</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td><code>"sm" | "base" | "lg"</code></td>
+                <td><code>"base"</code></td>
+                <td>输入框大小</td>
+            </tr></table>
+        <h2>Events</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>参数</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>input</td>
+                <td>event: <code>Event</code> - 触发事件</td>
+                <td>当键盘输入时，触发input事件，event.detail = {value}</td>
+            </tr>
+            <tr>
+                <td>focus</td>
+                <td>event: <code>Event</code> - 触发事件</td>
+                <td>输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度</td>
+            </tr>
+            <tr>
+                <td>blur</td>
+                <td>event: <code>Event</code> - 触发事件</td>
+                <td>输入框失去焦点时触发，event.detail = {value: value}</td>
+            </tr>
+            <tr>
+                <td>confirm</td>
+                <td>event: <code>Event</code> - 触发事件</td>
+                <td>点击完成按钮时触发，event.detail = {value: value}</td>
+            </tr>
+            <tr>
+                <td>keyboardheightchange</td>
+                <td>event: <code>Event</code> - 触发事件</td>
+                <td>键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}</td>
+            </tr></table>
+</body>
+</html>

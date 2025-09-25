@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wu-test - WuUi文档</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #3498db; margin-top: 30px; }
+        h3 { color: #2c3e50; margin-top: 20px; }
+        .description { font-size: 1.1em; line-height: 1.6; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #3498db; }
+        .example-container { margin: 20px 0; }
+        .example-title { font-weight: bold; margin-bottom: 10px; }
+        .code-block { font-family: monospace; background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        td, th { padding: 12px 8px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .back-link { margin-bottom: 20px; display: inline-block; }
+        code { background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; }
+        .param-item { margin-bottom: 4px; }
+        .param-item:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="back-link"><a href="index.html">← 返回组件列表</a></div>
+    <h1>wu-test</h1><div class="description">This is an example of creating a reusable grid component and using it with external data.</div><h2>组件示例</h2>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>-1
+// 示例1
+  &lt;wu-test
+    :type=&quot;loading&quot;
+    :state=&quot;open&quot;
+  &gt;content&lt;/wu-test&gt;</code></pre>
+            </div>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>-2
+// 示例2
+  &lt;wu-test
+    :type=&quot;loading&quot;
+    :state=&quot;open&quot;
+  &gt;content2&lt;/wu-test&gt;</code></pre>
+            </div>
+        <h2>Props</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>类型</td>
+            </tr>
+            <tr>
+                <td>state</td>
+                <td><code>"open" | "close" | string</code></td>
+                <td>-</td>
+                <td>状态</td>
+            </tr></table>
+        <h2>Expose (暴露的方法和属性)</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>getIsOpened</td>
+                <td><code>function</code></td>
+                <td>是否打开了</td>
+            </tr>
+            <tr>
+                <td>state</td>
+                <td><code>-</code></td>
+                <td>-</td>
+            </tr></table>
+        <h2>Slots</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>header</td>
+                <td>头部插槽</td>
+            </tr>
+            <tr>
+                <td>default</td>
+                <td>默认的</td>
+            </tr>
+            <tr>
+                <td>footer</td>
+                <td>脚部插槽</td>
+            </tr></table>
+</body>
+</html>

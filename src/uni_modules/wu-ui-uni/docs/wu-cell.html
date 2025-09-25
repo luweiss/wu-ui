@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wu-cell - WuUi文档</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #3498db; margin-top: 30px; }
+        h3 { color: #2c3e50; margin-top: 20px; }
+        .description { font-size: 1.1em; line-height: 1.6; margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #3498db; }
+        .example-container { margin: 20px 0; }
+        .example-title { font-weight: bold; margin-bottom: 10px; }
+        .code-block { font-family: monospace; background-color: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        td, th { padding: 12px 8px; text-align: left; border: 1px solid #ddd; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .back-link { margin-bottom: 20px; display: inline-block; }
+        code { background-color: #f0f0f0; padding: 2px 4px; border-radius: 3px; }
+        .param-item { margin-bottom: 4px; }
+        .param-item:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="back-link"><a href="index.html">← 返回组件列表</a></div>
+    <h1>wu-cell</h1><div class="description">以列表的方式展示内容的组件，通常配合wu-cell-group使用</div><h2>组件示例</h2>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;!-- 基础 --&gt;
+&lt;wu-cell-group&gt;
+    &lt;wu-cell label=&quot;姓名&quot;&gt;张三丰&lt;/wu-cell&gt;
+    &lt;wu-cell label=&quot;年龄&quot;&gt;100&lt;/wu-cell&gt;
+&lt;/wu-cell-group&gt;</code></pre>
+            </div>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;!-- 图标: prefixIcon(左侧图标),suffixIcon(右侧图标),showArrow(箭头) --&gt;
+&lt;wu-cell-group&gt;
+    &lt;wu-cell label=&quot;标签&quot; prefixIcon=&quot;love-filling&quot;&gt;图标在左侧&lt;/wu-cell&gt;
+    &lt;wu-cell label=&quot;标签&quot; suffixIcon=&quot;love-filling&quot;&gt;图标在右侧&lt;/wu-cell&gt;
+    &lt;wu-cell label=&quot;标签&quot; showArrow&gt;箭头图标&lt;/wu-cell&gt;
+&lt;/wu-cell-group&gt;</code></pre>
+            </div>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;!-- 链接: url(页面链接),urlParams(链接参数) --&gt;
+&lt;wu-cell-group&gt;
+    &lt;wu-cell label=&quot;标签&quot; url=“/pages/index/index” :urlParams=&quot;{id: 1}&quot;&gt;跳转到主页&lt;/wu-cell&gt;
+&lt;/wu-cell-group&gt;</code></pre>
+            </div>
+            <div class="example-container">
+                <h3 class="example-title">example</h3>
+                <pre class="code-block"><code>&lt;!-- 左滑显示隐藏的内容 --&gt;
+&lt;wu-cell-group&gt;
+    &lt;wu-cell swipe-enabled&gt;
+        主要内容
+        &lt;template #hidden-content&gt;隐藏的内容&lt;/template&gt;
+    &lt;/wu-cell&gt;
+&lt;/wu-cell-group&gt;</code></pre>
+            </div>
+        <h2>Props</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>prefixIcon</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>左侧图标，可选值同wu-icon.icon属性</td>
+            </tr>
+            <tr>
+                <td>label</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>左侧文本</td>
+            </tr>
+            <tr>
+                <td>content</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>主要内容</td>
+            </tr>
+            <tr>
+                <td>suffixIcon</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>右侧图标，可选值同WuIcon.icon属性</td>
+            </tr>
+            <tr>
+                <td>showArrow</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>是否显示向右箭头</td>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>点击跳转的链接</td>
+            </tr>
+            <tr>
+                <td>urlParams</td>
+                <td><code>any</code></td>
+                <td>-</td>
+                <td>跳转的链接参数</td>
+            </tr>
+            <tr>
+                <td>feedback</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>点击反馈效果</td>
+            </tr>
+            <tr>
+                <td>error</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>是否显示错误信息</td>
+            </tr>
+            <tr>
+                <td>errorMessage</td>
+                <td><code>string</code></td>
+                <td>-</td>
+                <td>错误信息</td>
+            </tr>
+            <tr>
+                <td>swipeEnabled</td>
+                <td><code>boolean</code></td>
+                <td>-</td>
+                <td>是否开启左滑显示隐藏内容</td>
+            </tr>
+            <tr>
+                <td>swipeWidth</td>
+                <td><code>string | number</code></td>
+                <td>-</td>
+                <td>左滑显示宽度，单位rpx，或百分比</td>
+            </tr>
+            <tr>
+                <td>autoCloseSwipe</td>
+                <td><code>boolean</code></td>
+                <td><code>true</code></td>
+                <td>是否自动关闭左滑</td>
+            </tr>
+            <tr>
+                <td>swipeDuration</td>
+                <td><code>number</code></td>
+                <td><code>300</code></td>
+                <td>左滑动画时间，单位ms</td>
+            </tr></table>
+        <h2>Expose (暴露的方法和属性)</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>类型</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>index</td>
+                <td><code>-</code></td>
+                <td>当前cell所在的cell-group的索引位置</td>
+            </tr>
+            <tr>
+                <td>swipeState</td>
+                <td><code>-</code></td>
+                <td>左滑组件的状态</td>
+            </tr></table>
+        <h2>Events</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>参数</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>click</td>
+                <td>-</td>
+                <td>点击事件</td>
+            </tr></table>
+        <h2>Slots</h2>
+        <table>
+            <tr>
+                <th>名称</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>hidden-content</td>
+                <td>隐藏的内容，左滑时显示</td>
+            </tr>
+            <tr>
+                <td>header</td>
+                <td>cell的上面部分</td>
+            </tr>
+            <tr>
+                <td>prefixIcon</td>
+                <td>左侧图标</td>
+            </tr>
+            <tr>
+                <td>label</td>
+                <td>label位置</td>
+            </tr>
+            <tr>
+                <td>default</td>
+                <td>主要内容</td>
+            </tr>
+            <tr>
+                <td>suffixIcon</td>
+                <td>右侧图标</td>
+            </tr>
+            <tr>
+                <td>footer</td>
+                <td>cell的下面部分</td>
+            </tr></table>
+</body>
+</html>

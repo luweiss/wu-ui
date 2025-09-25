@@ -29,6 +29,7 @@
     "exclude": [
         "src/pages",
         "src/App.vue",
-        "src/main.ts"
+        "src/main.ts",
+        "src/uni_modules"
     ]
 }
