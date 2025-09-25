@@ -179,11 +179,11 @@ const emit = defineEmits<{
     /**
      * 点击取消时触发
      */
-    cancel: [],
+    cancel: [e: Event],
     /**
      * 点击确认时触发
      */
-    confirm: []
+    confirm: [e: Event],
 }>();
 
 // 内部状态
