@@ -3,7 +3,6 @@ import api from "./api";
 
 declare module 'vue' {
     export interface GlobalComponents {
-        WuTest: typeof import('./wu-test/wu-test.vue')['default'];
         WuButton: typeof import('./wu-button/wu-button.vue')['default'];
         WuCell: typeof import('./wu-cell/wu-cell.vue')['default'];
         WuCellGroup: typeof import('./wu-cell-group/wu-cell-group.vue')['default'];

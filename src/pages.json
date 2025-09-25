@@ -1,9 +1,6 @@
 {
     "easycom": {
-        "autoscan": true,
         "custom": {
-            // wu-ui 配置
-            "^wu-(.*)": "@/components/wu-$1/wu-$1.vue"
         }
     },
     "globalStyle": {
