@@ -1,7 +1,7 @@
 {
   "id": "wu-ui-uni",
   "displayName": "wu-ui-uni",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Uni-App(Vue)平台的UI组件库。UI component library for Uni-App(Vue) platform. ",
   "keywords": [
     "wu-ui",
